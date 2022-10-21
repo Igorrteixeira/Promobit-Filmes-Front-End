@@ -10,6 +10,7 @@ export const ContainDetails = styled.div`
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
     margin: 50px auto;
     width: 90vw;
+    justify-content: center;
   }
 `;
 export const Video = styled.iframe`
