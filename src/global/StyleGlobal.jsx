@@ -7,15 +7,17 @@ export const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
     box-sizing: border-box;
     font-family: Roboto, Arial, Helvetica, sans-serif;
+    max-width: 98.9vw;
     
  }
  body{
    background-color: #E5E5E5;
  }
  
+ 
 
  button{
     cursor: pointer;
  }
 
-`
+`;

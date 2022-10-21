@@ -6,26 +6,53 @@ export const Container = styled.div`
   color: white;
   width: 80vw;
   gap: 5vw;
+
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    flex-direction: column;
+    width: 90vw;
+  }
 `;
 
 export const ImageMovie = styled.img`
-  width: 38vh;
+  width: 39vh;
   border-radius: 5px;
+
+  margin-bottom: -30px;
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    margin-bottom: 0;
+    width: 50vw;
+    margin: 10px auto;
+  }
 `;
 export const Description = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+ 
 `;
 export const DateAndTime = styled.div`
   display: flex;
   font-size: 18px;
   gap: 10px;
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    flex-direction: column;
+  }
+`;
+
+export const Genre = styled.div`
+  display: flex;
+  gap: 8px;
+  p ~ p::before{
+        content:",";
+    }
 `;
 
 export const Date = styled.div`
   display: flex;
   gap: 5px;
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    flex-direction: column;
+  }
 `;
 
 export const Average = styled.div`
@@ -42,6 +69,7 @@ export const Average = styled.div`
   #progress {
     color: #14ff00;
     position: absolute;
+
   }
 `;
 
@@ -56,9 +84,16 @@ export const Sinopse = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
+  letter-spacing: 1px;
 `;
 
 export const Crew = styled.div`
   display: flex;
-  gap: 5vw;
+  flex-wrap: wrap;
+  width: 65vw;
+  gap: 1vw;
+  margin-bottom: 10px;
+  div {
+    width: 200px;
+  }
 `;

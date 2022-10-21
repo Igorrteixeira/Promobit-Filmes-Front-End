@@ -1,4 +1,4 @@
-import { Movies, Pages,Container } from "./styled";
+import { Movies, Pages, Container } from "./styled";
 import { BASE_URL, key } from "../../constants/BASE_URL";
 import { CardMovies } from "../../components/CardMovies/CardMovies";
 import { FormatDate } from "../../services/FormatDate";
@@ -9,13 +9,15 @@ import PaginationControlled from "../../components/Pagination/Pagination";
 import { GetMovies } from "../../services/GetMovies";
 import { Genre } from "../../components/Genre/Genre";
 import { goToDetails } from "../../router/Coordinator";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
-  const navigate = useNavigate()
-  const {genre,page} = useContext(GlobalStateContext)
-  const moviesPopular = GetMovies(`${BASE_URL}/movie/popular?${key}&language=pt-BR&page=${page}`)
- 
+  const navigate = useNavigate();
+  const { genre, page } = useContext(GlobalStateContext);
+
+  const moviesPopular = GetMovies(
+    `${BASE_URL}/movie/popular?${key}&language=pt-BR&page=${page}`
+  );
   const listMovies = moviesPopular?.map((movie) => {
     const date = movie.release_date.split("-");
     const month = FormatDate(movie.release_date);
@@ -28,7 +30,6 @@ export const Home = () => {
             title={movie.title}
             date={newDate}
             backDrop={movie.poster_path}
-            button={()=>goToDetails(navigate(`details/${movie.id}`))}
           />
         </div>
       );
@@ -42,8 +43,6 @@ export const Home = () => {
               title={movie.title}
               date={newDate}
               backDrop={movie.poster_path}
-              button={goToDetails(`${navigate}${movie.id}`)}
-              
             />
           </div>
         );
@@ -52,9 +51,7 @@ export const Home = () => {
   });
   return (
     <Container>
-      <Header
-      genres={<Genre/>}
-      />
+      <Header genres={<Genre />} />
       <Movies>{listMovies}</Movies>
       <Pages>
         <PaginationControlled />

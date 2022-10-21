@@ -37,9 +37,8 @@ export const Genre = () => {
       <ContainButton>
         {genreMovie?.genres?.map((item) => {
           const active = genre.find((genreMovie) => genreMovie === item.id);
-          console.log(active);
           return (
-            <>
+            <div key={item.id}>
               {active === undefined ? (
                 <Button key={item.id} onClick={() => search(item.id)}>
                   {item.name}
@@ -49,7 +48,7 @@ export const Genre = () => {
                   {item.name} <TiDelete color="white" size={"17px"} />
                 </ActiveButton>
               )}
-            </>
+            </div>
           );
         })}
       </ContainButton>

@@ -1,6 +1,6 @@
 export const FormatDateBr = (date) => {
     let newDate = new Date(date);
-    const day = newDate.getDate()
+    const day = (`00${newDate.getDate()}`).slice(-2)
     const month = (`00${(newDate.getMonth() + 1)}`).slice(-2)
     const year = newDate.getFullYear(); 
     return `${day}/${month}/${year}`

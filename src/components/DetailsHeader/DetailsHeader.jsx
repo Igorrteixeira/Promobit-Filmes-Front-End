@@ -13,6 +13,7 @@ import {
   VoteAverage,
   Crew,
   Sinopse,
+  Genre,
 } from "./style";
 
 export const DetailHeader = (props) => {
@@ -36,18 +37,21 @@ export const DetailHeader = (props) => {
               ).split("-");
               return (
                 <Date key={props.id}>
-                  <p>{item.release_dates[0].certification} anos •</p>
-                  <p>{date}</p>
-                  <p>({item.iso_3166_1}) •</p>
+                  <p>{item.release_dates[0].certification} anos </p>
+                  <p>
+                    {date} ({item.iso_3166_1})
+                  </p>
                 </Date>
               );
             }
           })}
-          {props?.genres?.map((genre) => {
-            return <p key={genre.id}>{genre.name} </p>;
-          })}
+          <Genre>
+            {props?.genres?.map((genre) => {
+              return <p key={genre.id}> {genre.name} </p>;
+            })}
+          </Genre>
           <p>
-            • {hour.textHoras}h {hour.textrunTime}m{" "}
+            {hour.textHoras}h {hour.textrunTime}m{" "}
           </p>
         </DateAndTime>
         <VoteAverage>
@@ -74,7 +78,7 @@ export const DetailHeader = (props) => {
               crew.job === "Director"
             ) {
               return (
-                <div key={crew.id}>
+                <div key={crew.id + crew.job}>
                   <h2>{crew.name}</h2>
                   <p>{crew.job}</p>
                 </div>

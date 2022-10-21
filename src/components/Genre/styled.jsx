@@ -5,6 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  margin-bottom: 50px;
 `;
 export const ContainButton = styled.div`
   display: flex;
@@ -13,22 +14,39 @@ export const ContainButton = styled.div`
   align-items: center;
   width: 57vw;
   gap: 12px;
+
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    justify-content: flex-start;
+    width: 84vw;
+  }
 `;
 export const Title = styled.h1`
   color: white;
   text-align: center;
   width: 40vw;
   margin-top: 40px;
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    width: 90vw;
+    margin-top: 20px;
+    text-align: start;
+    margin-left: 20px;
+  }
 `;
 export const SearchBy = styled.p`
   font-size: 13px;
   color: white;
   margin-top: 20px;
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    width: 88vw;
+    text-align: start;
+    margin-left: 12px;
+  }
 `;
 
 export const Button = styled.button`
   border: none;
-
+  font-weight: bold;
+  color: #323232;
   padding: 10px;
   border-radius: 5px;
 `;

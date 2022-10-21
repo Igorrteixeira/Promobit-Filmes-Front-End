@@ -6,7 +6,6 @@ export const Container = styled.div`
     gap: 2vw;
     width: 80vw;
     height: 350px;
-    margin: 0px auto;
     overflow-x: scroll;
 
     &::-webkit-scrollbar {
@@ -20,14 +19,14 @@ export const Container = styled.div`
         border-radius: 10px;
   }
   
-
-    
+  @media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+      width: 90vw; 
+    }
 `
 export const Card = styled.div`
     display: flex;
     flex-direction: column;
     
-
     background-color: #ffffff;
     box-shadow: 5px 5px #b6b0b025;
     border-radius: 5px;
