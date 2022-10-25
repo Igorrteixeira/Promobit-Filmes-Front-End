@@ -16,7 +16,6 @@ export const ContainButton = styled.div`
   gap: 12px;
 
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    justify-content: flex-start;
     width: 90vw;
   }
 `;
@@ -38,7 +37,7 @@ export const SearchBy = styled.p`
   margin-top: 20px;
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
     width: 89vw;
-    text-align: start;
+    text-align: center;
     margin-left: 12px;
   }
 `;
