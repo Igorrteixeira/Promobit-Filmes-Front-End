@@ -17,7 +17,7 @@ export const ContainButton = styled.div`
 
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
     justify-content: flex-start;
-    width: 84vw;
+    width: 90vw;
   }
 `;
 export const Title = styled.h1`
@@ -37,7 +37,7 @@ export const SearchBy = styled.p`
   color: white;
   margin-top: 20px;
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    width: 88vw;
+    width: 89vw;
     text-align: start;
     margin-left: 12px;
   }
@@ -49,15 +49,24 @@ export const Button = styled.button`
   color: #323232;
   padding: 10px;
   border-radius: 5px;
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    width: 100px;
+    display:flex;
+    justify-content: center;
+  }
 `;
 export const ActiveButton = styled.button`
   display: flex;
   align-items: center;
-  gap: 3px;
   border: none;
 
   padding: 10px;
   border-radius: 5px;
   background-color: #d18000;
   color: white;
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    width: 100px;
+    display:flex;
+    justify-content: center;
+  }
 `;

@@ -16,27 +16,28 @@ export const Details = () => {
     [],
     `${BASE_URL}/movie/${movie}?${key}&append_to_response=release_dates,credits,videos,recommendations&language=pt-BR`
   ).data;
-
+console.log(details)
   const recomendation = details?.recommendations?.results?.map((movie) => {
     const date = movie.release_date.split("-");
     const month = FormatDate(movie.release_date);
     const newDate = `${date[2]} ${month} ${date[0]}`;
 
-    const teste = details?.genres?.some((item) =>
+    const ValidGenre = details?.genres?.some((item) =>
       movie.genre_ids.includes(item.id)
     );
-    if (teste) {
+    if (ValidGenre) {
       return (
         <CardMovies
           title={movie.title}
           backDrop={movie.poster_path}
           date={newDate}
+          voteAverage={details.vote_average}
+
         />
       );
     }
   });
 
-  console.log(details);
   return (
     <Container>
       <Header

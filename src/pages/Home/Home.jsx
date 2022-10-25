@@ -30,6 +30,7 @@ export const Home = () => {
             title={movie.title}
             date={newDate}
             backDrop={movie.poster_path}
+            voteAverage={movie.vote_average}
           />
         </div>
       );
@@ -43,12 +44,14 @@ export const Home = () => {
               title={movie.title}
               date={newDate}
               backDrop={movie.poster_path}
+              voteAverage={movie.vote_average}
             />
           </div>
         );
       }
     }
   });
+  console.log(moviesPopular)
   return (
     <Container>
       <Header genres={<Genre />} />

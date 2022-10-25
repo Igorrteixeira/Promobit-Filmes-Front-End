@@ -17,26 +17,27 @@ import {
 } from "./style";
 
 export const DetailHeader = (props) => {
-  const hour = ConvertHour(props.runTime);
-  const voteAverage = String(props.voteAverage)
+  const {id,runTime,voteAverage,title,img,year,releaseDates,genres,credits,overview} = props
+  const hour = ConvertHour(runTime);
+  const vote = String(props.voteAverage)
     .replace(/\D+/g, "")
     .substr(0, 2);
 
   return (
     <Container>
-      <ImageMovie src={IMG_URL + props.img} alt="" />
+      <ImageMovie src={IMG_URL + img} alt="" />
       <Description>
         <h1>
-          {props.title} ({props.year && props.year.substr(0, 4)})
+          {title} ({year && year.substr(0, 4)})
         </h1>
         <DateAndTime>
-          {props.releaseDates?.results?.map((item) => {
+          {releaseDates?.results?.map((item) => {
             if (item.iso_3166_1 === "BR") {
               const date = FormatDateBr(
                 item.release_dates[0].release_date
               ).split("-");
               return (
-                <Date key={props.id}>
+                <Date key={id}>
                   <p>{item.release_dates[0].certification} anos </p>
                   <p>
                     {date} ({item.iso_3166_1})
@@ -46,32 +47,32 @@ export const DetailHeader = (props) => {
             }
           })}
           <Genre>
-            {props?.genres?.map((genre) => {
+            {genres?.map((genre) => {
               return <p key={genre.id}> {genre.name} </p>;
             })}
           </Genre>
           <p>
-            {hour.textHoras}h {hour.textrunTime}m{" "}
+            {hour.textHoras}h {hour.textrunTime}m
           </p>
         </DateAndTime>
         <VoteAverage>
           <Average>
             <CircularProgress
               variant="determinate"
-              value={Number(voteAverage)}
+              value={Number(vote)}
               id={"progress"}
               size={"60px"}
             />
-            {voteAverage}%
+            {vote}%
           </Average>
           <p>Avaliação dos usuários</p>
         </VoteAverage>
         <Sinopse>
           <h2>Sinopse</h2>
-          <p>{props.overview}</p>
+          <p>{overview}</p>
         </Sinopse>
         <Crew>
-          {props?.credits?.map((crew) => {
+          {credits?.map((crew) => {
             if (
               crew.job === "Characters" ||
               crew.job === "Screenplay" ||

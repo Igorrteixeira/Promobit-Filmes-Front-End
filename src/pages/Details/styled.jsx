@@ -24,7 +24,7 @@ export const Video = styled.iframe`
 export const Recommendation = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 10px;
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
     align-items: center;
   }
